@@ -56,6 +56,32 @@ namespace YTSubConverter.Shared.Formats
             return loader(filePath);
         }
 
+        public static SubtitleDocument Load(Stream bytestream, string format)
+        {
+            switch ($".{format.ToLower()}")
+            {
+                case ".ass":
+                    return new AssDocument(bytestream, AssStyleOptionsList.LoadFromFile().Concat(AssStyleOptionsList.LoadFromString(Resources.DefaultStyleOptions)).ToList());
+
+                case ".sbv":
+                    return new SbvDocument(bytestream);
+
+                case ".srt":
+                    return new SrtDocument(bytestream);
+
+                case ".srv3":
+                case ".ytt":
+                    return new YttDocument(bytestream);
+
+                case ".xml":
+                case ".ttml":
+                case ".dfxp":
+                    return new TtmlDocument(bytestream);
+                default:
+                    throw new NotSupportedException();
+            }
+        }
+
         public static SubtitleDocument Convert(SubtitleDocument doc, string newExtension, bool visual)
         {
             switch (newExtension?.ToLower())
