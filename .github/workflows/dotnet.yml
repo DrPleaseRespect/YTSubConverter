@@ -27,9 +27,9 @@ jobs:
       uses: actions/upload-artifact@v4.3.3
       with:
     # Artifact name
-        name: artifact # optional, default is artifact
+        name: YTSubConverterLinux # optional, default is artifact
     # A file, directory or wildcard pattern that describes what to upload
-        path: YTSubConverter.MPVHelper/bin/Release/net8.0/publish/linux-x64
+        path: YTSubConverter.MPVHelper
     # The desired behavior if no files are found using the provided path.
   build_windows:
 
@@ -51,7 +51,7 @@ jobs:
       uses: actions/upload-artifact@v4.3.3
       with:
     # Artifact name
-        name: artifact # optional, default is artifact
+        name: YTSubConverterWindows # optional, default is artifact
     # A file, directory or wildcard pattern that describes what to upload
-        path: YTSubConverter.MPVHelper/bin/Release/net8.0/publish/win-x64
+        path: YTSubConverter.MPVHelper.exe
     # The desired behavior if no files are found using the provided path.
