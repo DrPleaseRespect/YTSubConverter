@@ -29,7 +29,7 @@ jobs:
     # Artifact name
         name: YTSubConverterLinux # optional, default is artifact
     # A file, directory or wildcard pattern that describes what to upload
-        path: publish
+        path: YTSubConverter.MPVHelper/bin/Release/net8.0/linux-x64/publish/
     # The desired behavior if no files are found using the provided path.
   build_windows:
 
@@ -53,5 +53,5 @@ jobs:
     # Artifact name
         name: YTSubConverterWindows # optional, default is artifact
     # A file, directory or wildcard pattern that describes what to upload
-        path: publish
+        path: YTSubConverter.MPVHelper/bin/Release/net8.0/win-x64/publish/
     # The desired behavior if no files are found using the provided path.
