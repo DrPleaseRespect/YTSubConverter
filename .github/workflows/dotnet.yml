@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish YTSubConverter.MPVHelper --os linux --no-restore
+      run: dotnet publish YTSubConverter.MPVHelper -r linux-x64 --no-restore
     - name: Test
       run: dotnet test YTSubConverter.Tests --no-build --verbosity normal\
     - name: Upload a Build Artifact
@@ -44,7 +44,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish YTSubConverter.MPVHelper --os win --no-restore
+      run: dotnet publish YTSubConverter.MPVHelper -r win-x64 --no-restore
     - name: Test
       run: dotnet test YTSubConverter.Tests --no-build --verbosity normal
     - name: Upload a Build Artifact
